@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 
 require 'vrlib'
 
@@ -8,7 +9,6 @@ STDERR.sync = true
 
 #everything in these directories will be included
 my_path = File.expand_path(File.dirname(__FILE__))
-require_all Dir.glob(my_path + "/bin/**/*.rb") 
+require_all Dir.glob(my_path + "/bin/**/*.rb")
 
-MyClass.new.show
-
+Display.new.show
