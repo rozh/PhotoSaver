@@ -4,6 +4,7 @@ class Display
 
   include GladeGUI
 
+
   def before_show()
     Photo.load_random_photo
     set_image
@@ -29,6 +30,7 @@ class Display
     slide_show
   end
 
+
   def slide_show
     Thread.start do
       loop do
@@ -46,6 +48,7 @@ class Display
     end
   end
 
+
   def set_image
     @original = Gdk::Pixbuf.new(Photo.filename)
     size = [ builder["linkbutton1"].allocation.width-10, builder["linkbutton1"].allocation.height-10]
@@ -57,6 +60,7 @@ class Display
     )
     builder["linkbutton1"].uri = Photo.renew_url
   end
+
 
   def get_resize_pixbuf(pixbuf, w, h)
     # 画像と画面サイズの大きさで判定
