@@ -12,7 +12,7 @@ class Photo
     until agent = rand_photo
       i += 1
     end
-    p i
+    print " loop num ", i, "\n"
     src = agent.page.search(".//img[@id='image']").at('img')['src']
 
     name = filename
@@ -61,6 +61,7 @@ class Photo
       agent.get(renew_url)
       star = agent.page.search(".//p[@class='like']").children.inner_text.to_i
       if star >= MIN_STAR
+        print "star: ", star
         return true
       else
         return false
